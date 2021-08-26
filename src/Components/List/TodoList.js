@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './TodoList.scss'
+import check from '../../Images/check.png'
 
 function TodoList() {
   const [todo, setTodo] = useState([
@@ -13,7 +14,7 @@ function TodoList() {
     },
     {
       name: "lunch",
-      isDone: false
+      isDone: true
     }
   ]);
 
@@ -28,8 +29,9 @@ function TodoList() {
     return (
       <div className="list" key={index}>
         <div>{item.name}</div>
-        <div>{item.isDone === false ? "Not Done" : "Done"}</div>
-        {item.isDone === false ? <div onClick={onClickDone(index)}>set as done</div> : "" }
+        {item.isDone === false ?
+          <img className="icon-close" alt="check" src={check} onClick={onClickDone(index)} /> : ""
+        }
       </div>
     );
   })
