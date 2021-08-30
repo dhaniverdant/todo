@@ -9,7 +9,6 @@ const TodoItem = ({ title, doneItem }) => {
       <div className="todo-icon">
         <img className="icon-close" alt="check" src={check} onClick={doneItem} />
       </div>
-
     </li>
   );
 };

@@ -16,11 +16,6 @@ const AddTodo = ({ handleSubmit }) => {
       <div>Add List</div>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <div className="input-group-prepend">
-            <div className="input-group-text bg-primary text-white">
-              <i className="fa fa-book" />
-            </div>
-          </div>
           <input
             type="text"
             className="form-control text-capitalize"
@@ -29,13 +24,13 @@ const AddTodo = ({ handleSubmit }) => {
             onChange={handleChange}
           />
         </div>
-        <button
+        { text.length > 0 ? <button
           type="button"
           onClick={handleSave}
           className="btn btn-block btn-primary mt-3"
         >
           Add Item
-        </button>
+        </button> : '' }
       </form>
     </div>
   );

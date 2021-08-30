@@ -1,22 +1,25 @@
 import React from "react";
 
-const DoneList = ({ items, clearList }) => {
-  
+const DoneList = ({ items }) => {
   return (
     <div>
       <h2 className="text-capitalize text-center">Done Items</h2>
-      <ul className="list-group-item text-capitalize d-flex justify-content-between my-2">
         {items.map(item => (
-          <li key={item.id}>{item.title}</li>
+          <div>
+            {/* <li className="list-group-item text-capitalize d-flex" key={item.id}>{item.title}</li> */}
+            <li className="list-group-item text-capitalize d-flex justify-content-between my-2" key={item.id}>
+              <h6>{item.title}</h6>
+            </li>
+            {/* <br /> */}
+          </div>
         ))}
-      </ul>
-      <button
+      {/* <button
         type="button"
         className="btn btn-danger btn-block text-capitalize mt-5"
         onClick={clearList}
       >
         clear list
-      </button>
+      </button> */}
     </div>
   );
 };
