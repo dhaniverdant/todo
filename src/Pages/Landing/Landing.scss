@@ -1,4 +1,9 @@
 .landing-wrapper {
-  // background-color: blanchedalmond;
-  width: 40%;
+  width: 30%;
+}
+
+@media only screen and (max-width: 600px) {
+  .landing-wrapper {
+    width: 90%;
+  }
 }
