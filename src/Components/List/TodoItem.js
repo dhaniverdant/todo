@@ -1,13 +1,14 @@
 import React from 'react';
-import check from '../../Images/check.png'
+import check from '../../Images/check.png';
+import './TodoList.scss'
 
 const TodoItem = ({ title, doneItem }) => {
   
   return (
-    <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
+    <li className="list">
       <h6>{title}</h6>
-      <div className="todo-icon">
-        <img className="icon-close" alt="check" src={check} onClick={doneItem} />
+      <div>
+        <img className="icon-done" alt="check" src={check} onClick={doneItem} />
       </div>
     </li>
   );

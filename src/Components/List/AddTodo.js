@@ -10,6 +10,7 @@ const AddTodo = ({ handleSubmit }) => {
     handleSubmit({ title: text, id: uuid() });
     setText("");
   };
+  const buttonClass = text.length > 0 ? "btn btn-block btn-primary mt-3" : "btn btn-block btn-primary mt-3 disabled"
 
   return (
     <div>
@@ -18,19 +19,20 @@ const AddTodo = ({ handleSubmit }) => {
         <div className="input-group">
           <input
             type="text"
-            className="form-control text-capitalize"
+            className="form-control"
             placeholder="Add A To Do Item"
             value={text}
             onChange={handleChange}
           />
         </div>
-        { text.length > 0 ? <button
+        <button
           type="button"
           onClick={handleSave}
-          className="btn btn-block btn-primary mt-3"
+          className={buttonClass}
+          disabled={text.indexOf(" ") === 0}
         >
           Add Item
-        </button> : '' }
+        </button>
       </form>
     </div>
   );

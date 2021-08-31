@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
+import './TodoList.scss';
 
 const DoneList = ({ items }) => {
   return (
     <div>
-      <h2 className="text-capitalize text-center">Done Items</h2>
+      <h2>Done Items</h2>
         {items.map(item => (
           <div>
             {/* <li className="list-group-item text-capitalize d-flex" key={item.id}>{item.title}</li> */}
-            <li className="list-group-item text-capitalize d-flex justify-content-between my-2" key={item.id}>
+            <li className="list" key={item.id}>
               <h6>{item.title}</h6>
             </li>
             {/* <br /> */}
