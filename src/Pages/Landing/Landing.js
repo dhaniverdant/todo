@@ -20,8 +20,9 @@ const Landing = () => {
     setItems(current => [...current.filter(x => x.id !== id), item]);
   };
 
-  const incompleteItems = items.filter(x => !x.isComplete);
-  const completeItems = items.filter(x => x.isComplete);
+  const incompleteItems = items.filter(incomplete => !incomplete.isComplete);
+  const completeItems = items.filter(complete => complete.isComplete);
+  console.log('items', items);
 
   return (
     <div className="landing-wrapper">
@@ -31,7 +32,7 @@ const Landing = () => {
         clearList={clearList}
         doneItem={doneItem}
       />
-      <DoneList items={completeItems} doneItem={doneItem} />
+      <DoneList items={completeItems} />
     </div>
   );
 }
